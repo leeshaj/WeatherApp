@@ -19,10 +19,10 @@ const ClimateTable = ({ data }) => {
           </tr>
         </thead>
         <tbody>
-          {data.map((item, index) => (
+          {data.map((item) => (
             <tr key={item._id}>
               {dataNames.map((name) => (
-                <td key={name}>{item.daily[name][index]}°C</td>
+                <td key={name}>{item.daily[name]}°C</td>
               ))}
             </tr>
           ))}
