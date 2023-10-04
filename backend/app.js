@@ -23,7 +23,7 @@ app.post('/api/climate-data', ClimateDataController.addData);
 
 app.get('/api/climate-data', async (req, res) => {
   try {
-    const sortBy = req.query.sort || '-createdAt'; // Sort by createdAt by default
+    const sortBy = '-createdAt'; 
     const climateData = await ClimateData.find().sort(sortBy);
     res.status(200).json(climateData);
   } catch (error) {

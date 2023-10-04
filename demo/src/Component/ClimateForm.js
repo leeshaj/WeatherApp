@@ -16,6 +16,8 @@ const ClimateForm = () => {
 
   const [errors, setErrors] = useState(initialFormData);
 
+  const [recentData, setRecentData] = useState(null);
+
   useEffect(() => {
     const fetchClimateData = async () => {
       try {
@@ -153,18 +155,30 @@ const ClimateForm = () => {
         });
 
         if (saveResponse.ok) {
+          
+          
+          
+          setClimateData((prevClimateData) => [data, ...prevClimateData]);
+          
           setFormData(initialFormData);
-          setClimateData(data);
+
+          setRecentData(data);
+          
           
         } else {
           console.error("Failed to save climate data.");
         }
+        
+        
       } else {
         console.error("Failed to fetch climate data.");
       }
+      
     } catch (error) {
       console.error("Error:", error);
     }
+    
+    
   };
 
   return (
@@ -221,16 +235,16 @@ const ClimateForm = () => {
           </button>
         </div>
       </form>
-      {climateData && (
+      {recentData && (
         <div class="form-group-cont col-sm-10">
           <h2>Climate Data</h2>
-          <p>Latitude: {climateData.latitude}</p>
-          <p>Longitude: {climateData.longitude}</p>
-          <p>generationtime_ms: {climateData.generationtime_ms}</p>
-          <p>utc_offset_seconds: {climateData.utc_offset_seconds}</p>
-          <p>timezone: {climateData.timezone}</p>
-          <p>timezone_abbreviation: {climateData.timezone_abbreviation}</p>
-          <p>elevation: {climateData.elevation}</p>
+          <p>Latitude: {recentData.latitude}</p>
+          <p>Longitude: {recentData.longitude}</p>
+          <p>generationtime_ms: {recentData.generationtime_ms}</p>
+          <p>utc_offset_seconds: {recentData.utc_offset_seconds}</p>
+          <p>timezone: {recentData.timezone}</p>
+          <p>timezone_abbreviation: {recentData.timezone_abbreviation}</p>
+          <p>elevation: {recentData.elevation}</p>
         </div>
       )}
 

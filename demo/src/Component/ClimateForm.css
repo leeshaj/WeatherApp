@@ -1,23 +1,34 @@
-.container{
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('https://static.vecteezy.com/system/resources/previews/004/884/952/non_2x/rain-clouds-illuminated-by-sun-background-free-photo.JPG');
+    background-size: cover;
+    background-attachment: fixed; /* Keep the background fixed while scrolling */
+  }
+  
+  .container {
     width: 70%;
+    margin: 0 auto; /* Center the container horizontally */
     margin-top: 50px;
     text-align: center;
     align-items: center;
-    /* background-color: rgb(20, 29, 100); */
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
     border: none;
     padding: 30px;
     border-radius: 10px;
-}
+    color: white;
+  }
 label{
     font-size: 15px;
 }
 
 .form-group{
     margin-left: 35px;
+    color: white;
 }
 .form-group-cont{
     margin-left: 75px;
-    background-color: rgb(248, 246, 246);
+    color: white;
     border: none;
     padding: 30px;
     border-radius: 10px;
