@@ -55,8 +55,8 @@ const addData = async(req, res) => {
       });
       
         await climateData.save();
-        const sortedClimateData = await ClimateData.find().sort('-createdAt');
-        res.status(201).json(sortedClimateData);
+       
+        res.status(201).json(climateData);
       } catch (error) {
         res
           .status(500)

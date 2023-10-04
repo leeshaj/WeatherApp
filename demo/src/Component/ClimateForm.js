@@ -155,14 +155,13 @@ const ClimateForm = () => {
         });
 
         if (saveResponse.ok) {
+          const savedData = await saveResponse.json();
           
-          
-          
-          setClimateData((prevClimateData) => [data, ...prevClimateData]);
+          setClimateData((prevClimateData) => [savedData, ...prevClimateData]);
           
           setFormData(initialFormData);
 
-          setRecentData(data);
+          setRecentData(savedData);
           
           
         } else {
